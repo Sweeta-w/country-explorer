@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Country Explorer</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo"><img src="assets/world.png" alt="Country Explorer Logo"></div>
+      <h1>Country Explorer</h1>
+    </header>
+    <main>
+      <div id="search-container">
+        <div class="search-group">
+          <label for="search-country">Search by country name</label>
+          <input type="text" id="search-country" placeholder="Search for a country..." pattern="[A-Za-z\s]+" title="Please enter only letters and spaces">
+        </div>
+        <div class="search-group">
+          <label for="region-select">Select by region</label>
+          <select id="region-select">
+            <option value="">All Regions</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+        <div class="search-group">
+          <label for="search-population">Search by population</label>
+          <input type="number" id="search-population" placeholder="Minimum population..." min="10000" max="1400000000" step="10000">
+        </div>
+      </div>
+      <div id="country-cards-container">
+
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
