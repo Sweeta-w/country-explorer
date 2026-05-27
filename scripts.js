@@ -8,7 +8,6 @@ const searchPopulation = document.getElementById("search-population");
 const regionSelect = document.getElementById("region-select");
 const typeError = document.getElementById("type-error");
 const populationError = document.getElementById("population-error");
-let currentIndex = 0;
 let displayCountries = 12;
 function populateCountryCards(dataArray) {
   container.innerHTML = "";
@@ -69,10 +68,8 @@ function filterCards(dataArray) {
     typeError.textContent = "";
   }
 
-  if (isNaN(searchPopulationTerm)) {
-    populationError.textContent = "Please enter a valid population number.";
-    return;
-  } else if (searchPopulationTerm < 10000 || searchPopulationTerm > 1400000000) {
+
+  if (searchPopulationTerm < 10000 || searchPopulationTerm > 1400000000) {
     populationError.textContent = "Population must be between 10,000 and 1,400,000,000.";
     return;
   } else {
@@ -111,7 +108,7 @@ function countryCardHandler(country) {
     encodeURIComponent(country.name.official) +
     "&flag=" + encodeURIComponent(country.flags.svg) + "&population=" + country.population + "&region=" + country.region + "&subregion=" + country.subregion + "&capital=" + country.capital + "&languages=" + encodeURIComponent(languages) + "&currencies=" + encodeURIComponent(currencies);
 
-    window.location.href = `detail.html${queryString}`;
+  window.location.href = `detail.html${queryString}`;
 
 }
 // const languages = getFormattedNames(data, 'languages')
