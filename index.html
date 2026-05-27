@@ -19,10 +19,11 @@
         <div class="search-group">
           <label for="search-country">Search by country name</label>
           <input type="text" id="search-country" placeholder="Search for a country..." pattern="[A-Za-z\s]+" title="Please enter only letters and spaces">
+          <p id="type-error"></p>
         </div>
         <div class="search-group">
           <label for="region-select">Select by region</label>
-          <select id="region-select">
+          <select id="region-select" aria-label="Select region">
             <option value="">All Regions</option>
             <option value="Africa">Africa</option>
             <option value="Americas">Americas</option>
@@ -33,17 +34,17 @@
         </div>
         <div class="search-group">
           <label for="search-population">Search by population</label>
-          <input type="number" id="search-population" placeholder="Minimum population..." min="10000" max="1400000000" step="10000">
+          <input type="number" id="search-population" placeholder="Minimum population..." value="10000" min="10000" max="1400000000" step="10000">
+          <p id="population-error"></p>
         </div>
       </div>
       <div id="country-cards-container">
-
       </div>
       <button id="show-more-btn">Show More</button>
     </main>
   </div>
 
-  <script type="module" src="script.js"></script>
+  <script type="module" src="scripts.js"></script>
 </body>
 
 </html>
